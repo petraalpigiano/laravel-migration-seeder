@@ -3,19 +3,8 @@
 
 {{-- La home avrà questo contenuto specifico  --}}
 @section('contenuto-home')
-    {{-- @php
-        //         $is_punctual = $train['is_punctual'] == 1 : 'Il treno è in orario': 'Il treno non è in orario';
-        // echo $is_punctual;
-        $is_punctual = '';
-        if ($train['is_punctual'] == 1) {
-        } else {
-            # code...
-        }
-    @endphp --}}
-
     <div class="container">
         <h1>Prossimi treni</h1>
-
         <div class="row row-cols-1 row-cols-md-3 g-4">
             @foreach ($trains as $train)
                 <div class="col">

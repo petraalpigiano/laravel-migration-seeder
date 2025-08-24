@@ -11,9 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('trains', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::table('trains', function (Blueprint $table) {
+            $table->boolean('is_punctual');
         });
     }
 
@@ -22,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('trains');
+        Schema::table('trains', function (Blueprint $table) {
+            $table->dropColumn('is_punctual');
+        });
     }
 };
